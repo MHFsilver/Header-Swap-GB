@@ -30,5 +30,5 @@ make_new_gb.py "(your rom here).gb"
 
 ## Credits
 
-[Angrevol](https://twitter.com/Angrevol) for helping with the code
+[Angrevol](https://twitter.com/Angrevol) for helping with the code  
 [Mezmorize](https://www.youtube.com/channel/UCgX4JmHxh49Sk9yr-QJdZvw) for first making this public
