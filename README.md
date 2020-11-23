@@ -2,7 +2,7 @@
 
 ## Description
 
-This is a series of scripts designed to take any normal GameBoy ROM, and modify it's header in order to make it playable in Pokémon Stadium's "GB Tower". While normally GB Tower cannot load anything outside of Pokémon games, it's possible to get it to load something else by modifying the header of the ROM itself. 
+This is a series of scripts designed to take any normal GameBoy ROM, and modify it's header in order to make it playable in Pokémon Stadium's "GB Tower". While normally GB Tower cannot load anything outside of Pokémon games, it's possible to get it to load something else by modifying the header of the ROM itself. For it in action, be sure to check out [my video here](https://www.youtube.com/watch?v=jcn5XGW1on8)
 
 ## Requirements
 
@@ -31,4 +31,5 @@ make_new_gb.py "(your rom here).gb"
 ## Credits
 
 [Angrevol](https://twitter.com/Angrevol) for helping with the code  
-[Mezmorize](https://www.youtube.com/channel/UCgX4JmHxh49Sk9yr-QJdZvw) for first making this public
+[Mezmorize](https://www.youtube.com/channel/UCgX4JmHxh49Sk9yr-QJdZvw) for first making this public  
+[Stop Skeletons from Fighting](https://www.youtube.com/channel/UC5Xeb9-FhZXgvw340n7PsCQ) for being the reason why I began looking into this
