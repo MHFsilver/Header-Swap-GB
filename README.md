@@ -27,3 +27,8 @@ make_new_gb.py "(your rom here).gb"
 - GameBoy Color games DO NOT work
 - Games cannot save as the header also contains code that dictates how games save, that gets overwritten
 - Pocket Monsters Stadium and Pokémon Stadium 2 do not work with this, only Stadium 1 (international)
+
+## Credits
+
+[Angrevol](https://twitter.com/Angrevol) for helping with the code
+[Mezmorize](https://www.youtube.com/channel/UCgX4JmHxh49Sk9yr-QJdZvw) for first making this public
