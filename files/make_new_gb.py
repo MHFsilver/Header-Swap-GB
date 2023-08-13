@@ -1,9 +1,6 @@
 # -*- coding: utf-8 -*-
 import sys, json, os
 from struct import unpack, pack
-reload(sys)
-sys.setdefaultencoding("utf-8")
-from builtins import bytes
 
 def r(f, mode="<i", size=4):
 	return unpack(mode, f.read(size))[0]
@@ -31,7 +28,7 @@ def calc_global_chksum(f):
 	f_end = f.tell()
 	f.seek(0)
 	x = 0
-	for i in xrange(j):
+	for i in range(j):
 		if not i in [0x14E, 0x14F]:
 			x += r(f, "B", 1)
 		else:
@@ -41,7 +38,7 @@ def calc_global_chksum(f):
 
 av = sys.argv
 if len(av) < 2:
-	print "usage: %s <filename>" % av[0].split("/")[-1]
+	print("usage: %s <filename>" % av[0].split("/")[-1])
 	exit()
 
 f = open(av[1], "rb")
