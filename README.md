@@ -2,7 +2,7 @@
 
 ## Description
 
-This is a series of scripts designed to take any normal GameBoy ROM, and modify it's header in order to make it playable in Pokémon Stadium's "GB Tower". While normally GB Tower cannot load anything outside of Pokémon games, it's possible to get it to load something else by modifying the header of the ROM itself. For it in action, be sure to check out [my video here](https://www.youtube.com/watch?v=jcn5XGW1on8)
+This is a series of scripts designed to take any normal GameBoy ROM, and modify its header in order to make it playable in Pokémon Stadium's "GB Tower". While normally GB Tower cannot load anything outside of Pokémon games, it's possible to get it to load something else by modifying the header of the ROM itself. For it in action, be sure to check out [my video here](https://www.youtube.com/watch?v=jcn5XGW1on8)
 
 ## Requirements
 
