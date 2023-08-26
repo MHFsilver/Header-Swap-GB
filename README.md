@@ -6,7 +6,7 @@ This is a series of scripts designed to take any normal GameBoy ROM, and modify 
 
 ## Requirements
 
-- Python 2.x
+- Python 3.x
 - Clean Pokémon Blue (UE) ROM (MD5: 50927E843568814F7ED45EC4F944BD8B)
 - Pokémon Stadium (U)
 - Rewritable GameBoy cartridge

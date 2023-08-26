@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 import sys, json, os
 from struct import unpack, pack
-reload(sys)
-sys.setdefaultencoding("utf-8")
 
 values = {
 	"CGB":{
@@ -77,7 +75,7 @@ def r(f, mode="<i", size=4):
 
 av = sys.argv
 if len(av) < 2:
-	print "usage: %s <filename>" % av[0].split("/")[-1]
+	print("usage: %s <filename>" % av[0].split("/")[-1])
 	exit()
 
 f = open(av[1], "rb")
@@ -97,7 +95,7 @@ title = "".join([chr(i) for i in title_raw])
 
 manuf_code = title_raw[11:-1]
 cgb_flag = title_raw[-1]
-new_license_code = "".join([r(f, "c", 1) for i in range(2)])
+new_license_code = b"".join([r(f, "c", 1) for i in range(2)])
 sgb_flag = r(f, "B", 1)
 cart_type = r(f, "B", 1)
 rom_size = r(f, "B", 1)
@@ -123,7 +121,7 @@ j = f.tell()
 fsize = j
 f_check = 0
 f.seek(0)
-for i in xrange(j):
+for i in range(j):
 	if not i in [0x14E, 0x14F]:
 		f_check += r(f, "B", 1)
 	else:
@@ -131,21 +129,21 @@ for i in xrange(j):
 f_check &= 0xFFFF
 
 
-print "Entry Point:", entry_point
-print "Logo:", nin_logo
+print("Entry Point:", entry_point)
+print("Logo:", nin_logo)
 # print title_raw
-print "Title:", title
-print "Manufacturer Code:", "".join([chr(i) for i in manuf_code])
-print "CGB Flag:", "%X -" % cgb_flag, values["CGB"][str(cgb_flag)] if values["CGB"].has_key(str(cgb_flag)) else "Unknown"
-print "New License Code:", new_license_code
-print "SGB Flag:", "%X -" % sgb_flag, values["SGB"][str(sgb_flag)] if values["SGB"].has_key(str(cgb_flag)) else "Unknown"
-print "Cartridge Type:", "%X -" % cart_type, values["cart_type"][str(cart_type)] if values["cart_type"].has_key(str(cart_type)) else "Unknown"
-print "ROM Size:", "%X -" % rom_size, values["ROM"][str(rom_size)] if values["ROM"].has_key(str(rom_size)) else "Unknown"
-print "RAM Size:", "%X -" % ram_size, values["RAM"][str(ram_size)] if values["RAM"].has_key(str(ram_size)) else "Unknown"
-print "Destination:", "%X -" % dest, values["dest"][str(dest)] if values["dest"].has_key(str(dest)) else "Unknown"
-print "Old License Code: %X" % old_license_code
-print "Version:", version
-print "Calculated Header Checksum:", "%X" % h_check
-print "File Header Checksum:", "%X" % h_sum
-print "Calculate Global Checksum:", "%X" % f_check
-print "File Global Checksum:", "%X" % f_sum
+print("Title:", title)
+print("Manufacturer Code:", "".join([chr(i) for i in manuf_code]))
+print("CGB Flag:", "%X -" % cgb_flag, values["CGB"][str(cgb_flag)] if str(cgb_flag) in values["CGB"] else "Unknown")
+print("New License Code:", new_license_code)
+print("SGB Flag:", "%X -" % sgb_flag, values["SGB"][str(sgb_flag)] if str(cgb_flag) in values["SGB"] else "Unknown")
+print("Cartridge Type:", "%X -" % cart_type, values["cart_type"][str(cart_type)] if str(cart_type) in values["cart_type"] else "Unknown")
+print("ROM Size:", "%X -" % rom_size, values["ROM"][str(rom_size)] if str(rom_size) in values["ROM"] else "Unknown")
+print("RAM Size:", "%X -" % ram_size, values["RAM"][str(ram_size)] if str(ram_size) in values["RAM"] else "Unknown")
+print("Destination:", "%X -" % dest, values["dest"][str(dest)] if str(dest) in values["dest"] else "Unknown")
+print("Old License Code: %X" % old_license_code)
+print("Version:", version)
+print("Calculated Header Checksum:", "%X" % h_check)
+print("File Header Checksum:", "%X" % h_sum)
+print("Calculate Global Checksum:", "%X" % f_check)
+print("File Global Checksum:", "%X" % f_sum)
